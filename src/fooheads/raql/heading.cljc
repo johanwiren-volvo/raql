@@ -177,7 +177,7 @@
             to-attr #(select-keys % ks)
             heading-x (mapv to-attr (infer-heading expr-x))
             heading-y (mapv to-attr (infer-heading expr-y))]
-        (assert (= heading-x heading-y) "union: headings must be the same")
+        (assert (= (set heading-x) (set heading-y)) "union: headings must be the same")
         heading-x)
 
       limit
